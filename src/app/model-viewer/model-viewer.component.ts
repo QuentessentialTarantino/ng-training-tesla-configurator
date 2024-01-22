@@ -11,23 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class ModelViewerComponent {
   readonly ENDPOINT = 'https://interstate21.com/tesla-app/images';
-  get src(): string {
-    const { modelCode, colorIndex } = this._model;
-
-    if (modelCode === undefined) return '';
-
-    const colorCode = this.getColorCode(modelCode, colorIndex);
-    return this.getUrl(modelCode, colorCode);
-  }
-
-  get alt(): string {
-    const { modelCode, colorIndex } = this._model;
-
-    if (modelCode === undefined) return '';
-
-    const colorCode = this.getColorCode(modelCode, colorIndex);
-    return `Tesla model ${modelCode} in ${colorCode}`;
-  }
 
   constructor(private _model: ModelService) { }
 
@@ -35,16 +18,21 @@ export class ModelViewerComponent {
     return `${this.ENDPOINT}/${modelCode}/${colorCode}.jpg`;
   }
 
-  getColorCode(modelCode: string, colorIndex: number): string {
-    const model = this._model.models
-      .find(model => model.code === modelCode);
-    if (model === undefined)
-      throw Error(`Model code ${modelCode} not found`);
+  get src(): string {
+    const { modelCode, colorCode } = this._model;
 
-    const color = model.colors[colorIndex];
-    if (color === undefined)
-      throw Error(`Color index ${colorIndex} not found for model ${modelCode}`);
+    if (modelCode === undefined || colorCode === undefined)
+      return '';
 
-    return color.code;
+    return this.getUrl(modelCode, colorCode);
+  }
+
+  get alt(): string {
+    const { modelCode, colorCode } = this._model;
+
+    if (modelCode === undefined || colorCode === undefined)
+      return '';
+
+    return `Tesla model ${modelCode} in ${colorCode}`;
   }
 }

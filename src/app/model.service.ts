@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ModelService {
   modelCode?: string;
-  colorIndex = 0;
+  colorCode?: string;
 
   constructor(private _http: HttpClient) { }
 
