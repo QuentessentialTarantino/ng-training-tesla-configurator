@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Models } from '../types/models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModelService {
-  models: Models = [];
   modelCode?: string;
   colorIndex = 0;
 
-  constructor(private _http: HttpClient) {
-    this._http
-      .get<Models>('/models')
-      .subscribe(models => this.models = models);
+  constructor(private _http: HttpClient) { }
+
+  get models$(): Observable<Models> {
+    return this._http.get<Models>('/models');
   }
 }
