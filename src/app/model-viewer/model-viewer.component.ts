@@ -12,14 +12,14 @@ import { CommonModule } from '@angular/common';
 export class ModelViewerComponent {
   readonly ENDPOINT = 'https://interstate21.com/tesla-app/images';
 
-  constructor(private _model: ModelService) { }
+  constructor(private _modelService: ModelService) { }
 
   getUrl(modelCode: string, colorCode: string): string {
     return `${this.ENDPOINT}/${modelCode}/${colorCode}.jpg`;
   }
 
   get src(): string {
-    const { modelCode, colorCode } = this._model;
+    const { modelCode, colorCode } = this._modelService;
 
     if (modelCode === undefined || colorCode === undefined)
       return '';
@@ -28,7 +28,7 @@ export class ModelViewerComponent {
   }
 
   get alt(): string {
-    const { modelCode, colorCode } = this._model;
+    const { modelCode, colorCode } = this._modelService;
 
     if (modelCode === undefined || colorCode === undefined)
       return '';
