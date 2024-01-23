@@ -7,7 +7,6 @@
       "request": "launch",
       "preLaunchTask": "serve",
       "url": "http://localhost:4200/",
-      "webRoot": "${workspaceFolder}/src",
       "runtimeArgs": [
         "--auto-open-devtools-for-tabs",
         "--user-data-dir=${userHome}/.config/vscode-chrome-dev"
@@ -19,7 +18,6 @@
       "request": "launch",
       "preLaunchTask": "serve (prod)",
       "url": "http://localhost:4200/",
-      "webRoot": "${workspaceFolder}/src",
       "runtimeArgs": [
         "--auto-open-devtools-for-tabs",
         "--user-data-dir=${userHome}/.config/vscode-chrome-dev"
