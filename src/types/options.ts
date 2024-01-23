@@ -1,3 +1,5 @@
+import { Config } from "./config";
+
 export type Options = {
   [modelCode: string]: {
     configs: Config[];
@@ -5,11 +7,3 @@ export type Options = {
     yoke: boolean;
   };
 }
-
-type Config = {
-  id: number;
-  description: string;
-  range: number;
-  speed: number;
-  price: number;
-};
