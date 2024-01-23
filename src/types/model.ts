@@ -1,8 +1,6 @@
 import { Color } from "./color";
 
-export type Models = Model[];
-
-type Model = {
+export type Model = {
   code: string;
   description: string;
   colors: Color[];
