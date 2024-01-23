@@ -1,7 +1,7 @@
 <h1>Step 2: Select your Config and Options</h1>
 <label>
   <span>Config:</span>
-  <select [(ngModel)]="configId" name="config">
+  <select id="configSelect" [(ngModel)]="configId" name="config">
     <option [value]="0">Choose...</option>
     <ng-container *ngIf="options">
       <option *ngFor="let config of options.configs" [value]="config.id">
@@ -18,10 +18,10 @@
   </p>
   <label *ngIf="options.towHitch">
     <span>Tow Hitch</span>
-    <input type="checkbox" [(ngModel)]="towHitch" name="towHitch">
+    <input type="checkbox" id="includeTow" [(ngModel)]="towHitch" name="towHitch">
   </label>
   <label *ngIf="options.yoke">
     <span>Yoke Steering Wheel</span>
-    <input type="checkbox" [(ngModel)]="yoke" name="yoke">
+    <input type="checkbox" id="includeYoke" [(ngModel)]="yoke" name="yoke">
   </label>
 </ng-container>

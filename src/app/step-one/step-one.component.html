@@ -1,7 +1,7 @@
 <h1>Step 1: Choose your Model and Color</h1>
 <label>
   <span>Model:</span>
-  <select name="model" [(ngModel)]="modelCode">
+  <select id="modelSelect" name="model" [(ngModel)]="modelCode">
     <option value selected>Choose...</option>
     <option *ngFor="let model of models" [value]="model.code">
       {{ model.description }}
@@ -10,7 +10,7 @@
 </label>
 <label *ngIf="modelCode">
   <span>Color:</span>
-  <select name="color" [(ngModel)]="colorCode">
+  <select id="colorSelect" name="color" [(ngModel)]="colorCode">
     <option *ngFor="let color of colors" [value]="color.code">
       {{ color.description }}
     </option>
