@@ -16,7 +16,11 @@ import { Color } from '../../types/color';
   styleUrl: './step-one.component.scss'
 })
 export class StepOneComponent {
-  constructor(private _modelService: ModelService) { }
+  #modelCode: string;
+
+  constructor(private _modelService: ModelService) {
+    this.#modelCode = this._modelService.modelCode$.value;
+  }
 
   get models(): Model[] {
     return this._modelService.models;
@@ -27,11 +31,12 @@ export class StepOneComponent {
   }
 
   get modelCode(): string {
-    return this._modelService.modelCode;
+    return this.#modelCode;
   }
 
   set modelCode(value: string) {
-    this._modelService.modelCode = value;
+    this.#modelCode = value;
+    this._modelService.modelCode$.next(value);
   }
 
   get colorCode(): string {

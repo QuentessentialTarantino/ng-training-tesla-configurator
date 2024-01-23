@@ -19,7 +19,8 @@ export class ModelViewerComponent {
   }
 
   get src(): string {
-    const { modelCode, colorCode } = this._modelService;
+    const modelCode = this._modelService.modelCode$.value;
+    const colorCode = this._modelService.colorCode;
 
     if (modelCode && colorCode)
       return this.getUrl(modelCode, colorCode);
@@ -27,7 +28,8 @@ export class ModelViewerComponent {
   }
 
   get alt(): string {
-    const { modelCode, colorCode } = this._modelService;
+    const modelCode = this._modelService.modelCode$.value;
+    const colorCode = this._modelService.colorCode;
 
     if (modelCode && colorCode)
       return `Tesla model ${modelCode} in ${colorCode}`;
