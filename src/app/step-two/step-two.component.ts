@@ -59,6 +59,7 @@ export class StepTwoComponent {
   // ngModel writes the value as a string
   set configId(id: string) {
     this._optionService.configId = parseInt(id);
+    this._optionService.config = this.config;
   }
 
   get towHitch(): boolean {

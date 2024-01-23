@@ -26,11 +26,22 @@ export class ModelService {
     );
   }
 
-  get colors(): Color[] {
+  get model(): Model {
     const modelCode = this.modelCode$.value;
     const model = this.models.find(model => model.code === modelCode);
 
-    if (model) return model.colors;
+    if (model) return model;
     throw Error(`Tesla model ${modelCode} not found`);
+  }
+
+  get color(): Color {
+    const color = this.colors.find(color => color.code === this.colorCode);
+
+    if (color) return color;
+    throw Error(`Color ${this.colorCode} not found`);
+  }
+
+  get colors(): Color[] {
+    return this.model.colors;
   }
 }
