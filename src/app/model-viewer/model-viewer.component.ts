@@ -21,18 +21,16 @@ export class ModelViewerComponent {
   get src(): string {
     const { modelCode, colorCode } = this._modelService;
 
-    if (modelCode === undefined || colorCode === undefined)
-      return '';
-
-    return this.getUrl(modelCode, colorCode);
+    if (modelCode && colorCode)
+      return this.getUrl(modelCode, colorCode);
+    return '';
   }
 
   get alt(): string {
     const { modelCode, colorCode } = this._modelService;
 
-    if (modelCode === undefined || colorCode === undefined)
-      return '';
-
-    return `Tesla model ${modelCode} in ${colorCode}`;
+    if (modelCode && colorCode)
+      return `Tesla model ${modelCode} in ${colorCode}`;
+    return '';
   }
 }
