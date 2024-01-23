@@ -3,21 +3,25 @@
   <span>Config:</span>
   <select [(ngModel)]="configId" name="config">
     <option [value]="0">Choose...</option>
-    <option *ngFor="let config of options.configs" [value]="config.id">
-      {{ config.description }}
-    </option>
+    <ng-container *ngIf="options">
+      <option *ngFor="let config of options.configs" [value]="config.id">
+        {{ config.description }}
+      </option>
+    </ng-container>
   </select>
 </label>
-<p *ngIf="configId && options.configs.length">
-  Range: {{ range }} miles -
-  Max Speed: {{ speed }} -
-  Cost: {{ price | currency:'USD' }}
-</p>
-<label *ngIf="options.towHitch">
-  <span>Tow Hitch</span>
-  <input type="checkbox" [(ngModel)]="towHitch" name="towHitch">
-</label>
-<label *ngIf="options.yoke">
-  <span>Yoke Steering Wheel</span>
-  <input type="checkbox" [(ngModel)]="yoke" name="yoke">
-</label>
+<ng-container *ngIf="options">
+  <p *ngIf="configId">
+    Range: {{ range }} miles -
+    Max Speed: {{ speed }} -
+    Cost: {{ price | currency:'USD' }}
+  </p>
+  <label *ngIf="options.towHitch">
+    <span>Tow Hitch</span>
+    <input type="checkbox" [(ngModel)]="towHitch" name="towHitch">
+  </label>
+  <label *ngIf="options.yoke">
+    <span>Yoke Steering Wheel</span>
+    <input type="checkbox" [(ngModel)]="yoke" name="yoke">
+  </label>
+</ng-container>

@@ -19,11 +19,7 @@ import { Config } from '../../types/config';
   styleUrl: './step-two.component.scss'
 })
 export class StepTwoComponent {
-  options: Options = {
-    configs: [],
-    towHitch: false,
-    yoke: false,
-  };
+  options?: Options;
 
   constructor(
     http: HttpClient,
@@ -48,7 +44,7 @@ export class StepTwoComponent {
   }
 
   get config(): Config {
-    const config = this.options.configs.find(
+    const config = this.options!.configs.find(
       config => config.id === this.configId
     );
 
