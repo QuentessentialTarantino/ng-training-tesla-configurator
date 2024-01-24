@@ -7,17 +7,17 @@ import { ModelService } from './model.service';
 import { OptionService } from './option.service';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/step-one', pathMatch: 'full' },
-  { path: 'step-one', component: StepOneComponent },
+  { path: '', redirectTo: 'select-model', pathMatch: 'full' },
+  { path: 'select-model', component: StepOneComponent },
   {
-    path: 'step-two',
+    path: 'select-config',
     component: StepTwoComponent,
     canActivate: [() => inject(ModelService).modelCode$.value.length > 0]
   },
   {
-    path: 'step-three',
+    path: 'summary',
     component: StepThreeComponent,
     canActivate: [() => inject(OptionService).configId > 0]
   },
-  { path: '**', redirectTo: '/step-one' }
+  { path: '**', redirectTo: 'select-model' }
 ];
