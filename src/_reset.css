@@ -1,5 +1,4 @@
-/* Based on Josh's Custom CSS Reset
-   https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* Start of Josh's Custom CSS Reset (https://www.joshwcomeau.com/css/custom-css-reset/) */
 *,
 *::before,
 *::after {
@@ -39,6 +38,12 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+/* End of Josh's Custom CSS Reset */
+
+html,
+body {
+  height: 100%;
 }
 
 code,
