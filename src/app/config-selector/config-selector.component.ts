@@ -6,6 +6,9 @@ import { Options } from '../../types/options';
 import { ConfigService } from '../config.service';
 import { FormsModule } from '@angular/forms';
 import { Config } from '../../types/config';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-config-selector',
@@ -14,6 +17,9 @@ import { Config } from '../../types/config';
     CommonModule,
     FormsModule,
     CurrencyPipe,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCheckboxModule,
   ],
   templateUrl: './config-selector.component.html',
   styleUrl: './config-selector.component.scss'

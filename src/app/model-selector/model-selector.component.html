@@ -1,18 +1,18 @@
 <h1>Step 1: Choose your Model and Color</h1>
-<label>
-  <span>Model:</span>
-  <select id="modelSelect" name="model" [(ngModel)]="modelCode">
-    <option value selected>Choose...</option>
-    <option *ngFor="let model of models" [value]="model.code">
+<mat-form-field>
+  <mat-label>Model:</mat-label>
+  <mat-select id="modelSelect" name="model" [(ngModel)]="modelCode">
+    <mat-option value selected>Choose...</mat-option>
+    <mat-option *ngFor="let model of models" [value]="model.code">
       {{ model.description }}
-    </option>
-  </select>
-</label>
-<label *ngIf="modelCode">
-  <span>Color:</span>
-  <select id="colorSelect" name="color" [(ngModel)]="colorCode">
-    <option *ngFor="let color of colors" [value]="color.code">
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field *ngIf="modelCode">
+  <mat-label>Color:</mat-label>
+  <mat-select id="colorSelect" name="color" [(ngModel)]="colorCode">
+    <mat-option *ngFor="let color of colors" [value]="color.code">
       {{ color.description }}
-    </option>
-  </select>
-</label>
+    </mat-option>
+  </mat-select>
+</mat-form-field>

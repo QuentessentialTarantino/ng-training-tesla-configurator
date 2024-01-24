@@ -4,6 +4,8 @@ import { ModelService } from '../model.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Color } from '../../types/color';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-model-selector',
@@ -11,6 +13,8 @@ import { Color } from '../../types/color';
   imports: [
     CommonModule,
     FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   templateUrl: './model-selector.component.html',
   styleUrl: './model-selector.component.scss'
