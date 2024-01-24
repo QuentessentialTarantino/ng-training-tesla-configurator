@@ -1,5 +1,16 @@
 @use 'reset';
 
 body {
+  padding: 48px;
+  min-width: fit-content;
+  background-color: #fff;
+
+  // Typography
   font-family: 'Roboto', sans-serif;
+  color: #171a20;
+
+  // Center content
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
