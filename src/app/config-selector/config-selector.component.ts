@@ -3,28 +3,28 @@ import { ModelService } from '../model.service';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Options } from '../../types/options';
-import { OptionService } from '../option.service';
+import { ConfigService } from '../config.service';
 import { FormsModule } from '@angular/forms';
 import { Config } from '../../types/config';
 
 @Component({
-  selector: 'app-step-two',
+  selector: 'app-config-selector',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
     CurrencyPipe,
   ],
-  templateUrl: './step-two.component.html',
-  styleUrl: './step-two.component.scss'
+  templateUrl: './config-selector.component.html',
+  styleUrl: './config-selector.component.scss'
 })
-export class StepTwoComponent {
+export class ConfigSelectorComponent {
   options?: Options;
 
   constructor(
     http: HttpClient,
     modelService: ModelService,
-    private _optionService: OptionService,
+    private _optionService: ConfigService,
   ) {
     const url = '/options/' + modelService.modelCode$.value;
 

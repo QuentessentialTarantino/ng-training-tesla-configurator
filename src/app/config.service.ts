@@ -5,7 +5,7 @@ import { Config } from '../types/config';
 @Injectable({
   providedIn: 'root'
 })
-export class OptionService {
+export class ConfigService {
   configId = 0; // No config selected
   config: Config | null = null;
   // False options mean either unavailable or available but not selected

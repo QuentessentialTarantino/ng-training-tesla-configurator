@@ -6,16 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { Color } from '../../types/color';
 
 @Component({
-  selector: 'app-step-one',
+  selector: 'app-model-selector',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
   ],
-  templateUrl: './step-one.component.html',
-  styleUrl: './step-one.component.scss'
+  templateUrl: './model-selector.component.html',
+  styleUrl: './model-selector.component.scss'
 })
-export class StepOneComponent {
+export class ModelSelectorComponent {
   #modelCode: string;
 
   constructor(private _modelService: ModelService) {

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { ModelService } from '../model.service';
-import { OptionService } from '../option.service';
+import { ConfigService } from '../config.service';
 import { Config } from '../../types/config';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Color } from '../../types/color';
 
 @Component({
-  selector: 'app-step-three',
+  selector: 'app-summary',
   standalone: true,
   imports: [
     CommonModule,
     CurrencyPipe,
   ],
-  templateUrl: './step-three.component.html',
-  styleUrl: './step-three.component.scss'
+  templateUrl: './summary.component.html',
+  styleUrl: './summary.component.scss'
 })
-export class StepThreeComponent {
+export class SummaryComponent {
   readonly OPTION_PRICE = 1000;
   modelDescription: string;
   config: Config;
@@ -25,7 +25,7 @@ export class StepThreeComponent {
 
   constructor(
     modelService: ModelService,
-    optionService: OptionService,
+    optionService: ConfigService,
   ) {
     this.modelDescription = modelService.model.description;
     this.config = optionService.config!;
