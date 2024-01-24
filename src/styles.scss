@@ -2,7 +2,7 @@
 @use 'style/material';
 
 body {
-  padding: 48px;
+  padding: 96px 48px;
   min-width: fit-content;
   background-color: #fff;
 
@@ -10,8 +10,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: #171a20;
 
-  // Center content
+  // Center content horizontally
   display: flex;
   justify-content: center;
-  align-items: center;
 }
