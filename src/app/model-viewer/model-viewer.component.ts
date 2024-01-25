@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { ModelService } from '../model.service';
 import { CommonModule } from '@angular/common';
+import { TeslaLogoSvgComponent } from '../svg/tesla-logo-svg.component';
 
 @Component({
   selector: 'app-model-viewer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TeslaLogoSvgComponent,
+  ],
   templateUrl: './model-viewer.component.html',
   styleUrl: './model-viewer.component.scss'
 })
@@ -18,21 +22,23 @@ export class ModelViewerComponent {
     return `${this.ENDPOINT}/${modelCode}/${colorCode}.jpg`;
   }
 
-  get src(): string {
-    const modelCode = this._modelService.modelCode$.value;
-    const colorCode = this._modelService.colorCode;
+  get isModelSelected(): boolean {
+    return this.modelCode !== '';
+  }
 
-    if (modelCode && colorCode)
-      return this.getUrl(modelCode, colorCode);
-    return '';
+  get src(): string {
+    return this.getUrl(this.modelCode, this.colorCode);
   }
 
   get alt(): string {
-    const modelCode = this._modelService.modelCode$.value;
-    const colorCode = this._modelService.colorCode;
+    return `Tesla model ${this.modelCode} in ${this.colorCode}`;
+  }
 
-    if (modelCode && colorCode)
-      return `Tesla model ${modelCode} in ${colorCode}`;
-    return '';
+  get modelCode(): string {
+    return this._modelService.modelCode$.value;
+  }
+
+  get colorCode(): string {
+    return this._modelService.colorCode;
   }
 }
