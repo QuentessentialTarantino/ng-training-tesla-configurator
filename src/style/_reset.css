@@ -14,11 +14,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* svg selector removed because it changes the size of
+    Angular Material mat-select dropdown arrow */
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
   display: block;
   max-width: 100%;
 }
@@ -39,6 +40,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 /* End of Josh's Custom CSS Reset */
 
 html,
