@@ -37,18 +37,6 @@ export class ConfigSelectorComponent {
     http.get<Options>(url).subscribe(options => this.options = options);
   }
 
-  get range(): number {
-    return this.config.range;
-  }
-
-  get speed(): number {
-    return this.config.speed;
-  }
-
-  get price(): number {
-    return this.config.price;
-  }
-
   get config(): Config {
     const config = this.options!.configs.find(
       config => config.id === this.configId
