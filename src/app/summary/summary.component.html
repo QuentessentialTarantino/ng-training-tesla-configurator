@@ -1,6 +1,6 @@
 <hgroup>
   <h1>Summary</h1>
-  <p>Your Tesla {{ modelDescription }}</p>
+  <p class="subtitle">Your Tesla {{ modelDescription }}</p>
 </hgroup>
 <table>
   <tbody>
@@ -27,8 +27,8 @@
   </tbody>
   <tfoot>
     <tr>
-      <th>Total Cost</th>
-      <td>{{ totalCost | currency:'USD' }}</td>
+      <th class="footer-cell">Total Cost</th>
+      <td class="footer-cell">{{ totalCost | currency:'USD' }}</td>
     </tr>
   </tfoot>
 </table>
